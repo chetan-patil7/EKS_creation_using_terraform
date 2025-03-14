@@ -7,7 +7,7 @@ terraform {
 	}
   }
   backend "s3" {
-	bucket = "s3-demo-eks-1234567890"
+	bucket = "s3-eks-demo-1234567890"
 	key    = "terraform.tfstate"
 	region = "us-east-1"
 	dynamodb_table = "tf-eks-table"
@@ -36,6 +36,6 @@ module "eks" {
   cluster_version = var.cluster_version
   vpc_id = module.vpc.vpc_id
   subnet_ids = module.vpc.private_subnet_ids
-  node_groups = var.node_groups
+  node_groups = var.map.node_groups
 
 }

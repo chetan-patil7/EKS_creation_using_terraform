@@ -18,7 +18,7 @@ resource "aws_s3_bucket" "s3_demo" {
 }
 
 resource "aws_dynamodb_table" "dynamo_tf_table" {
-  name           = "tf-eks-table"
+  name           = "tf-eks-table2"
   billing_mode   = "PAY_PER_REQUEST"
   hash_key       = "dynamo-id"
 
