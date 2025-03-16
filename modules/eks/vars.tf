@@ -21,16 +21,14 @@ variable "subnet_ids" {
 }
 
 variable "node_groups" {
-	description = "EKS node groups configuration"
-	type = map(object({
-		instance_type = string
-		desired_capacity = number
-		max_capacity = number
-		min_capacity = number
-		scaling_config = object({
-		  desired_size = number
-		  max_size = number
-		  min_size = number
-		})
-	}))
+  description = "EKS node group configuration"
+  type = map(object({
+    instance_types = list(string)
+    capacity_type  = string
+    scaling_config = object({
+      desired_size = number
+      max_size     = number
+      min_size     = number
+    })
+  }))
 }

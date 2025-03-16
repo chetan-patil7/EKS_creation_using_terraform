@@ -1,11 +1,9 @@
 output "cluster_endpoint" {
-  description = "The endpoint for the EKS Kubernetes API"
-  value       = aws_eks_cluster.aws_eks_cluster.endpoint
-
+  description = "EKS cluster endpoint"
+  value       = aws_eks_cluster.main.endpoint
 }
 
 output "cluster_name" {
-  description = "The name of the EKS cluster"
-  value       = aws_eks_cluster.aws_eks_cluster.name
-
+  description = "EKS cluster name"
+  value       = aws_eks_cluster.main.name
 }
